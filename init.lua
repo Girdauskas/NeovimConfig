@@ -11,3 +11,4 @@ vim.opt.expandtab = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.keymap.set("n", "?", function() require("custom.help").show_help() end, {})
