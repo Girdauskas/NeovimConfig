@@ -13,6 +13,16 @@ return {
                 enable = true,
                 update_root = false,
             },
+            
+            on_attach = function(bufnr)
+                local api = require("nvim-tree.api")
+
+                -- Applying defaults
+                api.config.mappings.default_on_attach(bufnr)
+
+                -- Using ? for help (default is g?)
+                vim.keymap.set('n', '?', api.tree.toggle_help, { buffer = bufnr })
+            end,
         })
 
         
